@@ -40,3 +40,73 @@ Processing by PostsController#show as HTML
   [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 1]]
   Rendered posts/show.html.erb within layouts/application (0.4ms)
 Completed 200 OK in 27ms (Views: 10.4ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.7ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (3.6ms)[0m  INSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "Post Title"], ["description", "Post description"], ["created_at", "2016-04-17 01:31:49.809678"], ["updated_at", "2016-04-17 01:31:49.809678"]]
+  [1m[36m (3.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mPost Load (1.6ms)[0m  SELECT "posts".* FROM "posts"
+
+
+Started GET "/posts/new" for ::1 at 2016-04-17 02:37:06 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 5143ms (Views: 5011.0ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/posts" for ::1 at 2016-04-17 02:37:35 +0100
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qJpGi5ctMFspjlq+ZBdJNeuoCrTxQpgJ+J9MXX1JZA7xI6mVJoFllsvds4MPPmfZNBg3SmE68GYxtB7IkQVIPA==", "title"=>"Hello Word", "description"=>"This is my first post\r\n", "commit"=>"Submit Post"}
+  [1m[35m (1.2ms)[0m  begin transaction
+  [1m[36mSQL (1.6ms)[0m  [1mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Hello Word"], ["description", "This is my first post\r\n"], ["created_at", "2016-04-17 01:37:35.274475"], ["updated_at", "2016-04-17 01:37:35.274475"]]
+  [1m[35m (9.2ms)[0m  commit transaction
+Completed 500 Internal Server Error in 124ms (ActiveRecord: 12.0ms)
+
+ActionController::UrlGenerationError (No route matches {:action=>"show", :controller=>"posts", :id=>nil} missing required keys: [:id]):
+  app/controllers/posts_controller.rb:19:in `create'
+
+
+  Rendered /Users/joshua/.rvm/rubies/ruby-2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (27.4ms)
+  Rendered /Users/joshua/.rvm/rubies/ruby-2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (22.9ms)
+  Rendered /Users/joshua/.rvm/rubies/ruby-2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (6.5ms)
+  Rendered /Users/joshua/.rvm/rubies/ruby-2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (463.0ms)
+  Rendered /Users/joshua/.rvm/rubies/ruby-2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (2.9ms)
+  Rendered /Users/joshua/.rvm/rubies/ruby-2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (3.4ms)
+  Rendered /Users/joshua/.rvm/rubies/ruby-2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (2.7ms)
+  Rendered /Users/joshua/.rvm/rubies/ruby-2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.5ms)
+  Rendered /Users/joshua/.rvm/rubies/ruby-2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (333.8ms)
+  Rendered /Users/joshua/.rvm/rubies/ruby-2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (1.7ms)
+  Rendered /Users/joshua/.rvm/rubies/ruby-2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (2.3ms)
+  Rendered /Users/joshua/.rvm/rubies/ruby-2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (843.2ms)
+
+
+Started POST "/posts" for ::1 at 2016-04-17 02:39:17 +0100
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qJpGi5ctMFspjlq+ZBdJNeuoCrTxQpgJ+J9MXX1JZA7xI6mVJoFllsvds4MPPmfZNBg3SmE68GYxtB7IkQVIPA==", "title"=>"Hello Word", "description"=>"This is my first post\r\n", "commit"=>"Submit Post"}
+  [1m[36m (0.5ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (2.5ms)[0m  INSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "Hello Word"], ["description", "This is my first post\r\n"], ["created_at", "2016-04-17 01:39:18.519049"], ["updated_at", "2016-04-17 01:39:18.519049"]]
+  [1m[36m (132.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/posts/4
+Completed 302 Found in 682ms (ActiveRecord: 142.7ms)
+
+
+Started GET "/posts/4" for ::1 at 2016-04-17 02:39:18 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mPost Load (1.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered posts/show.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 297ms (Views: 227.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-04-17 02:39:20 +0100
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2016-04-17 02:39:20 +0100
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-04-17 02:39:20 +0100
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2016-04-17 02:39:20 +0100
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-04-17 02:39:20 +0100
