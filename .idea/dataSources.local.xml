@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="Rails rails-create-action-readme-v-000: development" uuid="15cc41d7-f5d2-4e39-a6f7-983a8e9553a5">
+      <auth-required>false</auth-required>
+    </data-source>
+    <data-source name="Rails rails-create-action-readme-v-000: test" uuid="291f80fd-5042-4a93-b086-d1a8bae65733" />
+  </component>
+</project>
