@@ -40,3 +40,38 @@ Processing by PostsController#show as HTML
   [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 1]]
   Rendered posts/show.html.erb within layouts/application (0.4ms)
 Completed 200 OK in 27ms (Views: 10.4ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "Title Goes Here"], ["description", "Desc goes here..."], ["created_at", "2017-07-26 21:14:05.291458"], ["updated_at", "2017-07-26 21:14:05.291458"]]
+  [1m[36m (8.9ms)[0m  [1mcommit transaction[0m
+  [1m[35mPost Load (0.6ms)[0m  SELECT  "posts".* FROM "posts"  ORDER BY "posts"."id" DESC LIMIT 1
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-26 14:19:43 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /home/jose/.rvm/gems/ruby-2.3.1/gems/railties-4.2.5/lib/rails/templates/rails/welcome/index.html.erb (1.4ms)
+Completed 200 OK in 18ms (Views: 7.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2017-07-26 14:19:49 -0700
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 402ms (Views: 397.8ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2017-07-26 14:19:59 -0700
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tBGPiEEBX4x6QsN6vrw4VHEBY2UtDh2Kz1rLDJyL92+26chcObIih3Vp4Ve+7bNoxNi78hstZkTQ+jbs5xkFag==", "title"=>"a title", "description"=>"a description", "commit"=>"Submit Post"}
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "a title"], ["description", "a description"], ["created_at", "2017-07-26 21:19:59.570687"], ["updated_at", "2017-07-26 21:19:59.570687"]]
+  [1m[35m (8.2ms)[0m  commit transaction
+Redirected to http://localhost:3000/posts/3
+Completed 302 Found in 31ms (ActiveRecord: 9.1ms)
+
+
+Started GET "/posts/3" for 127.0.0.1 at 2017-07-26 14:19:59 -0700
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered posts/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 29ms (Views: 18.1ms | ActiveRecord: 0.3ms)
