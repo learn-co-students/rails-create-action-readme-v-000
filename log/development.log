@@ -40,3 +40,114 @@ Processing by PostsController#show as HTML
   [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 1]]
   Rendered posts/show.html.erb within layouts/application (0.4ms)
 Completed 200 OK in 27ms (Views: 10.4ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "The title goes here"], ["description", "The description goes here..."], ["created_at", "2017-03-09 13:53:40.115603"], ["updated_at", "2017-03-09 13:53:40.115603"]]
+  [1m[36m (2.5ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/" for 98.109.50.129 at 2017-03-09 14:13:16 +0000
+Cannot render console from 98.109.50.129! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/railties-4.2.5/lib/rails/templates/rails/welcome/index.html.erb (1.8ms)
+Completed 200 OK in 20ms (Views: 9.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts" for 98.109.50.129 at 2017-03-09 14:13:22 +0000
+Cannot render console from 98.109.50.129! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+SyntaxError (/home/kevinladkins-39364/code/labs/rails-create-action-readme-v-000/app/controllers/posts_controller.rb:20: syntax error, unexpected end-of-input, expecting keyword_end):
+  app/controllers/posts_controller.rb:20: syntax error, unexpected end-of-input, expecting keyword_end
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (24.6ms)
+
+
+Started GET "/posts" for 98.109.50.129 at 2017-03-09 14:13:45 +0000
+Cannot render console from 98.109.50.129! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.6ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 1226ms (Views: 1222.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/posts/new" for 98.109.50.129 at 2017-03-09 14:13:54 +0000
+Cannot render console from 98.109.50.129! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 21ms (Views: 19.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for 98.109.50.129 at 2017-03-09 14:14:04 +0000
+Cannot render console from 98.109.50.129! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tIXES5Dh1GM1krn3tZ7r8fpUcoOk2yZcx51wAT4P9mmw5fmXpCdyEYc3y5KDwS3hvgDgZld5Fb5k6w9DcDnP0g==", "title"=>"This is the title", "description"=>"This is the description\r\n", "commit"=>"Submit Post"}
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "This is the title"], ["description", "This is the description\r\n"], ["created_at", "2017-03-09 14:14:04.093362"], ["updated_at", "2017-03-09 14:14:04.093362"]]
+  [1m[36m (4.5ms)[0m  [1mcommit transaction[0m
+Redirected to http://159.203.84.80:30017/posts
+Completed 302 Found in 19ms (ActiveRecord: 5.5ms)
+
+
+Started GET "/posts" for 98.109.50.129 at 2017-03-09 14:14:04 +0000
+Cannot render console from 98.109.50.129! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.5ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 21ms (Views: 19.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts/new" for 98.109.50.129 at 2017-03-09 14:14:20 +0000
+Cannot render console from 98.109.50.129! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 23ms (Views: 12.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for 98.109.50.129 at 2017-03-09 14:14:32 +0000
+Cannot render console from 98.109.50.129! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ft4E8cU/UU3u4/+XKyER6q8+7LuI4C3+YaPOhJdnXz96vjkt8fn3P1xGjfIdftf662p+XntCHhzC1bHG2VFmhA==", "title"=>"Is this thing on?", "description"=>"Here's a description", "commit"=>"Submit Post"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "Is this thing on?"], ["description", "Here's a description"], ["created_at", "2017-03-09 14:14:32.504919"], ["updated_at", "2017-03-09 14:14:32.504919"]]
+  [1m[36m (4.8ms)[0m  [1mcommit transaction[0m
+Redirected to http://159.203.84.80:30017/posts
+Completed 302 Found in 68ms (ActiveRecord: 5.1ms)
+
+
+Started GET "/posts" for 98.109.50.129 at 2017-03-09 14:14:32 +0000
+Cannot render console from 98.109.50.129! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 14ms (Views: 13.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/new" for 98.109.50.129 at 2017-03-09 14:15:01 +0000
+Cannot render console from 98.109.50.129! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 25ms (Views: 17.3ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/posts" for 98.109.50.129 at 2017-03-09 14:15:17 +0000
+Cannot render console from 98.109.50.129! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hm/MSwdGgan1wldx60B6N/2b77fcFei8YsvBQNhQ4fyCD/GXM4An20dnJRTdH7wnuc99Ui+3217Bvb4ClmbYRw==", "title"=>"Let's see if this works", "description"=>"Here's a none-too-detailed description\r\n", "commit"=>"Submit Post"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "Let's see if this works"], ["description", "Here's a none-too-detailed description\r\n"], ["created_at", "2017-03-09 14:15:17.771636"], ["updated_at", "2017-03-09 14:15:17.771636"]]
+  [1m[36m (4.5ms)[0m  [1mcommit transaction[0m
+Redirected to http://159.203.84.80:30017/posts/5
+Completed 302 Found in 9ms (ActiveRecord: 5.0ms)
+
+
+Started GET "/posts/5" for 98.109.50.129 at 2017-03-09 14:15:17 +0000
+Cannot render console from 98.109.50.129! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mPost Load (0.3ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered posts/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 26ms (Views: 19.3ms | ActiveRecord: 0.3ms)
