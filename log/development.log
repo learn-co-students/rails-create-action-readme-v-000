@@ -40,3 +40,31 @@ Processing by PostsController#show as HTML
   [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 1]]
   Rendered posts/show.html.erb within layouts/application (0.4ms)
 Completed 200 OK in 27ms (Views: 10.4ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "Title Goes Here"], ["description", "Desc goes here..."], ["created_at", "2018-03-05 15:38:37.828433"], ["updated_at", "2018-03-05 15:38:37.828433"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/posts/new" for ::1 at 2018-03-05 09:44:05 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 419ms (Views: 403.9ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/posts" for ::1 at 2018-03-05 09:44:21 -0600
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pQdtnIiwRu1qTcgQphvoWrs1u95fZ70tGj8cI8IfeDqUdGEKs81vRRo62OYujkdW9D0PKRyCeGSWDllZkYrOvg==", "title"=>"test", "description"=>"testing 123", "commit"=>"Submit Post"}
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "test"], ["description", "testing 123"], ["created_at", "2018-03-05 15:44:21.844493"], ["updated_at", "2018-03-05 15:44:21.844493"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+Redirected to http://localhost:3000/posts/3
+Completed 302 Found in 42ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/posts/3" for ::1 at 2018-03-05 09:44:21 -0600
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered posts/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 35ms (Views: 11.9ms | ActiveRecord: 0.1ms)
