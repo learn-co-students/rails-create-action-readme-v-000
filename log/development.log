@@ -40,3 +40,30 @@ Processing by PostsController#show as HTML
   [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 1]]
   Rendered posts/show.html.erb within layouts/application (0.4ms)
 Completed 200 OK in 27ms (Views: 10.4ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "Title Goes Here"], ["description", "Desc goes here..."], ["created_at", "2018-04-10 06:23:00.933290"], ["updated_at", "2018-04-10 06:23:00.933290"]]
+  [1m[36m (2.0ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2018-04-10 07:26:16 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 453ms (Views: 438.1ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2018-04-10 07:26:32 +0100
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"soJ87Eb2ZMkLMxHmIBBgMRVcsZcPiT8T/r8gaNyNqTB++2NM2TZE26NeINQy+1BgtMrAwb1blkYGw0HO4o448g==", "title"=>"test title", "description"=>"test description", "commit"=>"Submit Post"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "test title"], ["description", "test description"], ["created_at", "2018-04-10 06:26:32.630751"], ["updated_at", "2018-04-10 06:26:32.630751"]]
+  [1m[35m (1.6ms)[0m  commit transaction
+Redirected to http://127.0.0.1:3000/posts
+Completed 302 Found in 8ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-04-10 07:26:32 +0100
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 18ms (Views: 16.7ms | ActiveRecord: 0.2ms)
