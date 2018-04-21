@@ -40,3 +40,66 @@ Processing by PostsController#show as HTML
   [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 1]]
   Rendered posts/show.html.erb within layouts/application (0.4ms)
 Completed 200 OK in 27ms (Views: 10.4ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "Title Goes Here"], ["description", "Desc goes here..."], ["created_at", "2018-04-21 09:23:11.419593"], ["updated_at", "2018-04-21 09:23:11.419593"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/" for ::1 at 2018-04-21 05:38:55 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/stephendecker/.rvm/gems/ruby-2.4.1/gems/railties-4.2.10/lib/rails/templates/rails/welcome/index.html.erb (2.0ms)
+Completed 200 OK in 27ms (Views: 14.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for ::1 at 2018-04-21 05:39:05 -0400
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 418ms (Views: 411.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2018-04-21 05:39:05 -0400
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2018-04-21 05:39:05 -0400
+
+
+Started GET "/assets/turbolinks.self-2db6ec539b9190f75e1d477b305df53d12904d5cafdd47c7ffd91ba25cbec128.js?body=1" for ::1 at 2018-04-21 05:39:05 -0400
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2018-04-21 05:39:05 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2018-04-21 05:39:05 -0400
+
+
+Started POST "/posts" for ::1 at 2018-04-21 05:39:23 -0400
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KNzS3foZkxjEBmyZOdhF4WCUxseTK/VlkL3kS/linKDmjIJGj6I17btdxlUMSm270JyH9eRigv/lQV0kl/d8Vg==", "title"=>"nu title", "description"=>"nu description", "commit"=>"Submit Post"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "nu title"], ["description", "nu description"], ["created_at", "2018-04-21 09:39:23.908463"], ["updated_at", "2018-04-21 09:39:23.908463"]]
+  [1m[35m (1.2ms)[0m  commit transaction
+Redirected to http://localhost:3000/posts/3
+Completed 302 Found in 7ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/posts/3" for ::1 at 2018-04-21 05:39:23 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered posts/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 21ms (Views: 14.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts" for ::1 at 2018-04-21 05:40:12 -0400
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 15ms (Views: 14.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/" for ::1 at 2018-04-21 05:40:25 -0400
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 16ms (Views: 14.7ms | ActiveRecord: 0.1ms)
