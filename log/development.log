@@ -40,3 +40,32 @@ Processing by PostsController#show as HTML
   [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 1]]
   Rendered posts/show.html.erb within layouts/application (0.4ms)
 Completed 200 OK in 27ms (Views: 10.4ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "Title Goes Here"], ["description", "Desc goes here..."], ["created_at", "2018-05-12 06:25:54.244564"], ["updated_at", "2018-05-12 06:25:54.244564"]]
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts"  ORDER BY "posts"."id" DESC LIMIT 1[0m
+
+
+Started GET "/posts/new" for ::1 at 2018-05-12 01:36:29 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 348ms (Views: 337.4ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/posts" for ::1 at 2018-05-12 01:36:40 -0500
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KuiKxosvHnP+Yn54/NUTG8dixyxSau+leLNMt4M6LAvSeXTlPB+PsbSLj+qibANElaoggMCy6nTFE3NVEAfAIQ==", "title"=>"Spark", "description"=>"Mastercracktion", "commit"=>"Submit Post"}
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Spark"], ["description", "Mastercracktion"], ["created_at", "2018-05-12 06:36:40.624864"], ["updated_at", "2018-05-12 06:36:40.624864"]]
+  [1m[35m (1.3ms)[0m  commit transaction
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 1.7ms)
+
+ActionController::UrlGenerationError (No route matches {:action=>"show", :controller=>"posts", :id=>nil} missing required keys: [:id]):
+  app/controllers/posts_controller.rb:20:in `create'
+
+
+  Rendered /Users/michaelchapman/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.9ms)
+  Rendered /Users/michaelchapman/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /Users/michaelchapman/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/michaelchapman/.rvm/gems/ruby-2.3.4/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (73.2ms)
