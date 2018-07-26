@@ -10,4 +10,16 @@ class PostsController < ApplicationController
 	def new
 		@post = Post.new
 	end
+
+	def create
+		@post = Post.new
+  		@post.title = params[:title]
+  		@post.description = params[:description]
+		@post.save
+		redirect_to post_path(@post) 
+	
+		# this is how we redirect..				  
+		# we redirected to @post in the index
+
+	end
 end
