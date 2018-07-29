@@ -4,7 +4,6 @@ Let's take a deeper look at how the Rails forms we've been creating actually fun
 
 ```ruby
 post = Post.new
-post.title = "Title Goes Here"
 post.description = "Desc goes here..."
 post.save
 ```
