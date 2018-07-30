@@ -10,4 +10,8 @@ class PostsController < ApplicationController
 	def new
 		@post = Post.new
 	end
+
+	def create
+		redirect_to Post.create(title: params['title'], description: params['description']) 
+	end
 end
