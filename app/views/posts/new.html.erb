@@ -1,13 +1,4 @@
-<h3>New Post Form</h3>
 
-<%= form_tag posts_path do %>
-  <label>title</label><br>
-  <%= text_field_tag :'title' %><br>
+<%= render "form" %>
 
-  <label>Description:</label><br>
-  <%= text_field_tag :'description' %><br>
-
-  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-
-  <%= submit_tag "Submit Post" %>
-<% end %>
+<%= session[:form_params] if session[:form_params] %>
