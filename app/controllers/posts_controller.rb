@@ -1,3 +1,5 @@
+# require 'pry'
+
 class PostsController < ApplicationController
   def index
     @posts = Post.all
@@ -11,5 +13,10 @@ class PostsController < ApplicationController
     @post = Post.new
   end
 
+  def create
+    @post = Post.create({title: params[:title], description: params[:description]})
+    # binding.pry
+    redirect_to "/posts/#{@post.id}"
+  end
   # add create method here
 end
