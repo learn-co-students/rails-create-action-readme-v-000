@@ -1,4 +1,4 @@
-# Create Action
+ # Create Action
 
 In this lesson, we'll code a `create` action — '**C**' in the '**CRUD**' life
 cycle — that saves a new `Post` object and then redirects to the newly-created
