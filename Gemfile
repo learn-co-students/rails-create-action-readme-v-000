@@ -46,3 +46,4 @@ group :development do
   gem 'spring'
 end
 
+gem 'bundler', '~> 1.16', '>= 1.16.1'
