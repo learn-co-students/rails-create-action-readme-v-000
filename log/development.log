@@ -40,3 +40,49 @@ Processing by PostsController#show as HTML
   [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 1]]
   Rendered posts/show.html.erb within layouts/application (0.4ms)
 Completed 200 OK in 27ms (Views: 10.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 69.123.20.191 at 2019-02-27 03:48:41 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/railties-4.2.11/lib/rails/templates/rails/welcome/index.html.erb (2.8ms)
+Completed 200 OK in 28ms (Views: 15.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for 69.123.20.191 at 2019-02-27 03:48:48 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 444ms (Views: 438.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 69.123.20.191 at 2019-02-27 03:48:48 +0000
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 69.123.20.191 at 2019-02-27 03:48:48 +0000
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 69.123.20.191 at 2019-02-27 03:48:48 +0000
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 69.123.20.191 at 2019-02-27 03:48:48 +0000
+
+
+Started GET "/assets/turbolinks.self-569ee74eaa15c1e2019317ff770b8769b1ec033a0f572a485f64c82ddc8f989e.js?body=1" for 69.123.20.191 at 2019-02-27 03:48:49 +0000
+
+
+Started POST "/posts" for 69.123.20.191 at 2019-02-27 03:49:03 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QLISmlkydlz+wg4XycO2iJgv/Y4ps+kdsJ+uMKuWffcuod2mwj7rXP4fTz82NeSvqz0hWmGyCv0QOb5Qjcqv3w==", "title"=>"hahah", "description"=>"ahhahah", "commit"=>"Submit Post"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "hahah"], ["description", "ahhahah"], ["created_at", "2019-02-27 03:49:03.392205"], ["updated_at", "2019-02-27 03:49:03.392205"]]
+  [1m[35m (3.8ms)[0m  commit transaction
+Redirected to http://67.205.188.72:34675/posts/2
+Completed 302 Found in 12ms (ActiveRecord: 4.4ms)
+
+
+Started GET "/posts/2" for 69.123.20.191 at 2019-02-27 03:49:03 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered posts/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 49ms (Views: 34.7ms | ActiveRecord: 0.3ms)
