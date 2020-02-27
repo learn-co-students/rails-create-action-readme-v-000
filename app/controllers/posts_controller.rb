@@ -17,6 +17,6 @@ class PostsController < ApplicationController
     @post.title = params[:title]
     @post.description = params[:description]
     @post.save
-    redirect_to post_path(@post)
+    redirect_to post_path(@post) #redirecting to the new resource's show page
   end
 end
